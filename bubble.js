@@ -27,11 +27,9 @@ function Bubble(x, y) {
 
   //enter note with enter key: if enter is pressed and textfield not empthy: new Bubble objects
   this.write = function(content) {
-    textSize(32);
-
-    fill(0,0,0);
-    text(content, this.x, this.y, this.diameter, this.diameter); // Text wraps within text box
-
+    fill(50);
+    text(content, this.x, this.y, this.diameter, this.diameter) // Text wraps within text box
+    fill(0, 102, 153);
   }
 
 

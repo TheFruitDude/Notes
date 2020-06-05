@@ -1,5 +1,7 @@
 var bubbles = [];
 let inp, button;
+var note;
+
 
 function setup() {
   createCanvas(600, 400);
@@ -9,18 +11,18 @@ function setup() {
     bubbles.push(new Bubble(x, y));
   }
   inp = createInput('');
-  //inp.input(myInputEvent)
+  inp.input(myInputEvent)
+
   button = createButton('click me');
   button.position(600, 75);
-  button.mousePressed(submitNote(inp.value()));
+  //
+  button.mousePressed(() => { bubbles[0].write(note) note = ""})
 }
 
 function myInputEvent() {
-   console.log('you are typing: ', this.value());
-  //bubbles[i].write(this.value())
-}
-function submitNote(n) {
-  bubbles[0].write(n);
+  note = this.value();
+  console.log('you are typing: ', this.value());
+
 }
 
 function mousePressed() {
@@ -31,10 +33,10 @@ function mousePressed() {
 
 
 function draw() {
-  background(0);
+  background(510);
   for (var i = 0; i < bubbles.length; i++) {
     bubbles[i].move();
     bubbles[i].display();
-
+    //bubbles[i].write('nonsense')
   }
 }
