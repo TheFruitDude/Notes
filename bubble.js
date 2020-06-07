@@ -3,11 +3,25 @@ function Bubble(x, y) {
   this.y = y;
   this.col = color(255, 204, 0);
   this.diameter = 100;
+  //boolean to check if there is a note in this object
+  this.written = false;
+  this.content = content;
+
+this.isWritten = function() {
+  return this.written;
+}
 
   this.display = function() {
     stroke(255);
     fill(this.col);
     rect(this.x, this.y, this.diameter, this.diameter);
+    if (this.written) {
+      textSize(13)
+        // Text wraps within text box
+      fill(0)
+      text(this.content, this.x, this.y, this.diameter, this.diameter)
+    }
+
   }
 
   this.clicked = function() {
@@ -20,16 +34,20 @@ function Bubble(x, y) {
   this.move = function() {
     //this.x = this.x + random(-1, 1);
     //this.y = this.y + random(-1, 1);
+    this.f = function(x) {
+      return Math.square(x)
+    }
   };
 
-  // create a rule for when the bubble moves should the rectangle move also
-  // this can be done later
-
-  //enter note with enter key: if enter is pressed and textfield not empthy: new Bubble objects
+  // enter note with enter key: if enter is pressed and textfield not empthy: new Bubble objects
   this.write = function(content) {
-    fill(50);
-    text(content, this.x, this.y, this.diameter, this.diameter) // Text wraps within text box
-    fill(0, 102, 153);
+        //   this function just updates the content
+  if (!(content == "")) {
+    // check if content is Nothing
+    this.content = content;
+    this.written = true;
+  }
+
   }
 
 

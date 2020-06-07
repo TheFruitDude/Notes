@@ -5,23 +5,28 @@ var note;
 
 function setup() {
   createCanvas(600, 400);
+
   for (var i = 0; i < 1; i++) {
-    var x = random(width);
-    var y = random(height);
+    //var x = random(width);
+    //var y = random(height);
+    var x = 50
+    var y = 50 
     bubbles.push(new Bubble(x, y));
   }
+
   inp = createInput('');
   inp.input(myInputEvent)
 
   button = createButton('click me');
-  button.position(600, 75);
-  //
-  button.mousePressed(() => { bubbles[0].write(note) note = ""})
+  button.position(0, 430);
+
+  button.mousePressed(() => { bubbles[0].write(note)
+  note = ""})
 }
 
 function myInputEvent() {
   note = this.value();
-  console.log('you are typing: ', this.value());
+  //console.log('you are typing: ', this.value());
 
 }
 
@@ -33,10 +38,12 @@ function mousePressed() {
 
 
 function draw() {
-  background(510);
+  background(51);
+
   for (var i = 0; i < bubbles.length; i++) {
-    bubbles[i].move();
     bubbles[i].display();
-    //bubbles[i].write('nonsense')
+    if (bubbles[i].isWritten()) {
+      bubbles[i].display();
+    }
   }
 }
