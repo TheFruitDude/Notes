@@ -7,17 +7,17 @@ function Bubble(x, y) {
   this.written = false;
   this.content = content;
 
-this.isWritten = function() {
-  return this.written;
-}
+  this.isWritten = function() {
+    return this.written;
+  }
 
   this.display = function() {
-    stroke(255);
+
     fill(this.col);
     rect(this.x, this.y, this.diameter, this.diameter);
     if (this.written) {
       textSize(13)
-        // Text wraps within text box
+      // Text wraps within text box
       fill(0)
       text(this.content, this.x, this.y, this.diameter, this.diameter)
     }
@@ -41,14 +41,19 @@ this.isWritten = function() {
 
   // enter note with enter key: if enter is pressed and textfield not empthy: new Bubble objects
   this.write = function(content) {
-        //   this function just updates the content
-  if (!(content == "")) {
-    // check if content is Nothing
-    this.content = content;
-    this.written = true;
+    //   this function just updates the content
+    if (!(content == "")) {
+      // check if content is Nothing
+      this.content = content;
+      this.written = true;
+    }
   }
-
+  this.changeSize = function(d) {
+    this.diameter = d;
   }
-
+  this.changeColor = function(c) {
+    
+    this.col = c
+  }
 
 };
