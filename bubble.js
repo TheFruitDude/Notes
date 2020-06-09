@@ -34,9 +34,14 @@ function Bubble(x, y) {
   this.move = function() {
     //this.x = this.x + random(-1, 1);
     //this.y = this.y + random(-1, 1);
-    this.f = function(x) {
-      return Math.square(x)
+    function f(x) {
+      //  y = ax + b
+      return 5.3 * x + 4
     }
+
+    this.x += 1;
+    this.y = f(x)
+
   };
 
   // enter note with enter key: if enter is pressed and textfield not empthy: new Bubble objects
@@ -52,7 +57,7 @@ function Bubble(x, y) {
     this.diameter = d;
   }
   this.changeColor = function(c) {
-    
+
     this.col = c
   }
 

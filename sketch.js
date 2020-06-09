@@ -1,11 +1,12 @@
 var bubbles = [];
 let inp, button, btnColor;
 let slider1;
+let slider2; // slider2 for text size
 var note;
 
 
 function setup() {
-  createCanvas(600, 400);
+  createCanvas(windowWidth, windowHeight );
 
   for (var i = 0; i < 1; i++) {
     //var x = random(width);
