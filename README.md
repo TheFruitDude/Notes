@@ -1,5 +1,6 @@
 # Notes
-# Just a simple p5 Web Application
+This is work in progress. 
+To code a Google Keep inspired web-app is the goal.
 ## I have  a lot of ideas: I want to create some sort of Google Keep notes clone. However, privacy is priority
 
 -visualize the notes as boxes and set color 
